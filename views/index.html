@@ -5,6 +5,15 @@
 	</head>
 	<body>
 		<h1 style='text-align:center'>Fullstack Twitter</h1>
+			<div style="margin-top:10px class="container">
+				<form method="POST" action="/tweets/tweetadd">
+					<label for='text_field'>Create Tweet</label>
+					<input name="content" type="text" id="text_field" value="Tweet Here" style="width: 400px;"/>
+					by
+					<input name="author" type ="text" id="text_field" value="Name" sytle="width: 100px;"/>
+					<input type='submit' value='Add Tweet'/>
+				</form>
+			</div>	
 		<div id="wrap">
 			<div class='container'>
 				<ul class='list-group'>
@@ -12,9 +21,9 @@
 					<li class="list-group-item" style="margin-bottom: 10px">
 						<img src={{ category.pictureurl }} style="width:128px;height:128px;">
 						<br>
-						{{ category.content }}
+						<a href='/tweets/usertweet/{{ category.content }}'>{{ category.content }}</a>
 						<br>
-						<p> - <a href='/'>{{ category.name }}</a></p>
+						<p> - <a href='/tweets/{{ category.id }}'>{{ category.name }}</a></p>
 					</li>
 					{% endfor %}
 				</ul>

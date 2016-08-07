@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>{{ title }}</title>
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+	</head>
+	<body>
+		<h1 style='text-align:center'><a href="/">Fullstack Twitter</a></h1>
+		<div id="wrap">
+			<div class='container'>
+				<ul class='list-group'>
+				<h2 style="text-align:center">Single Tweet</h2>
+				{% for category in categories %}
+					<li class="list-group-item" style="margin-bottom: 10px">
+						<img src={{ category.pictureurl }} style="width:128px;height:128px">
+						<!-- <br> -->
+						<p style="text-align:center"> {{ category.content }}</p>
+						<br>
+					</li>
+				{% endfor %}
+				</ul>
+			</div>
+		</div>	
+	</body>
+</html>
